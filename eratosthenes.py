@@ -11,22 +11,18 @@ def getPrimes():
         primes.append(prime)
         if prime**2 > num:
             break
-        delPrimes(prime)
+        j = 0
+        val = prime**2
+        while j < len(numList):
+            if val in numList:
+                numList.remove(val)
+            j += 1
+            val = prime**2 + (j * prime)
+            if val > num:
+                break
         i += 1
     finalList = primes + numList
     return finalList
-
-
-def delPrimes(prime):
-    i = 0
-    val = prime**2
-    while i < len(numList):
-        if val in numList:
-            numList.remove(val)
-        i += 1
-        val = prime**2 + (i * prime)
-        if val > num:
-            break
 
 
 while True:
