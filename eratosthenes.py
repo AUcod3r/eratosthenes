@@ -21,8 +21,7 @@ def getPrimes():
             if val > num:
                 break
         i += 1
-    finalList = primes + numList
-    return finalList
+    return ','.join(map(str, primes + numList))
 
 
 while True:
